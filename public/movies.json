@@ -1,0 +1,38 @@
+{
+  "action": [
+    {
+      "id": 1,
+      "title": "The Dark Knight",
+      "posterURL": "/posters/dark-knight.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Inception",
+      "posterURL": "/posters/inception.jpg"
+    }
+  ],
+  "animation": [
+    {
+      "id": 10,
+      "title": "Finding Nemo",
+      "posterURL": "/posters/nemo.jpg"
+    },
+    {
+      "id": 11,
+      "title": "Toy Story",
+      "posterURL": "/posters/toy-story.jpg"
+    }
+  ],
+  "drama": [
+    {
+      "id": 20,
+      "title": "Interstellar",
+      "posterURL": "/posters/interstellar.jpg"
+    },
+    {
+      "id": 21,
+      "title": "Shawshank Redemption",
+      "posterURL": "/posters/shawshank.jpg"
+    }
+  ]
+}
