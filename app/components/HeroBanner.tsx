@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Show } from "../../types/show";
 
-export default function HeroBanner({ movie }) {
+export default function HeroBanner({ movie }: { movie: Show }) {
+
   const backdrop =
     movie.image?.original ??
     movie.image?.medium ??
