@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Show } from "../../types/show";
 
-export default function MovieCard({ movie }) {
+export default function MovieCard({ movie }: { movie: Show }) {
+
   const poster =
     movie.image?.medium ??
     movie.image?.original ??
