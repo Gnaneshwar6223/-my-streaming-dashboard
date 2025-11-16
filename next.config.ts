@@ -1,8 +1,16 @@
-/** @type {import('next').NextConfig} */
+/** next.config.js */
 const nextConfig = {
+  reactStrictMode: true,
   images: {
-    unoptimized: true, // disable image optimization completely
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "static.tvmaze.com",
+        port: "",
+        pathname: "/uploads/**",
+      },
+    ],
   },
 };
 
-export default nextConfig;
+module.exports = nextConfig;

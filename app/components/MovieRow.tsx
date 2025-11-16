@@ -1,23 +1,17 @@
+"use client";
+
 import MovieCard from "./MovieCard";
-import type { Movie } from "@/types/movie";
 
-export default function MovieRow({
-  title,
-  movies,
-}: {
-  title: string;
-  movies: Movie[];
-}) {
+export default function MovieRow({ title, movies }) {
   return (
-    <div className="mb-10">
-      <h2 className="text-2xl font-bold mb-3">{title}</h2>
+    <section className="mb-12">
+      <h2 className="text-xl font-semibold mb-4">{title}</h2>
 
-      {/* 👇 Horizontal Scroll */}
-      <div className="flex gap-5 overflow-x-auto pb-4">
-        {movies.map((movie) => (
-          <MovieCard key={movie.id} movie={movie} />
+      <div className="flex gap-4 overflow-x-scroll no-scrollbar">
+        {movies.map((m) => (
+          <MovieCard key={m.id} movie={m} />
         ))}
       </div>
-    </div>
+    </section>
   );
 }

@@ -1,17 +1,40 @@
 import Image from "next/image";
-import { Movie } from "@/types/movie";
+import Link from "next/link";
 
-export default function MovieCard({ movie }: { movie: Movie }) {
+export default function MovieCard({ movie }) {
+  const poster =
+    movie.image?.medium ??
+    movie.image?.original ??
+    "/fallback.jpg";
+
   return (
-    <div className="w-[160px] flex-shrink-0">
-      <Image
-        src={movie.posterURL}
-        alt={movie.title}
-        width={160}
-        height={230}
-        className="rounded-lg object-cover shadow-md hover:scale-105 transition"
-      />
-      <p className="mt-2 text-sm font-medium opacity-90">{movie.title}</p>
-    </div>
+    <Link
+      href={`/movie/${movie.id}`}
+      className="group relative block w-[160px] shrink-0"
+    >
+      {/* Image with hover animation */}
+      <div
+        className="
+          overflow-hidden rounded-lg
+          transition-all duration-300
+          group-hover:scale-110
+          group-hover:-translate-y-2
+          group-hover:shadow-2xl
+        "
+      >
+        <Image
+          src={poster}
+          alt={movie.name}
+          width={160}
+          height={240}
+          className="object-cover w-full h-full"
+        />
+      </div>
+
+      {/* Movie name */}
+      <p className="mt-2 text-sm text-white group-hover:text-red-400 transition-colors">
+        {movie.name}
+      </p>
+    </Link>
   );
 }
