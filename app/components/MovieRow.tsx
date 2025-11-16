@@ -2,7 +2,15 @@
 
 import MovieCard from "./MovieCard";
 
-export default function MovieRow({ title, movies }) {
+import { Show } from "../../types/show";
+
+export default function MovieRow({
+  title,
+  movies,
+}: {
+  title: string;
+  movies: Show[];
+}) {
   return (
     <section className="mb-12">
       <h2 className="text-xl font-semibold mb-4">{title}</h2>
@@ -15,3 +23,5 @@ export default function MovieRow({ title, movies }) {
     </section>
   );
 }
+
+
